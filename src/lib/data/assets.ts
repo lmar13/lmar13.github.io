@@ -1,6 +1,6 @@
-import type { Asset } from '$lib/types';
-import { theme } from '$lib/stores/theme';
 import { base } from '$app/paths';
+import { theme } from '$lib/stores/theme';
+import type { Asset } from '$lib/types';
 
 const gh = (file: string) => `${base}/logos/${file}`;
 
@@ -70,7 +70,18 @@ const Assets = {
 	Jest: a('jest.png'),
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
-	Postcss: a('postcss.svg')
+	Postcss: a('postcss.svg'),
+	Socket: '',
+	DaVinci: '',
+	Webpack: '',
+	Jasmine: '',
+	Playwright: '',
+	Figma: '',
+	Confluence: '',
+	Jira: '',
+	YouTrack: '',
+	MySQL: '',
+	MSSQL: '',
 };
 
 export default Assets;
