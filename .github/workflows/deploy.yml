@@ -19,10 +19,13 @@ jobs:
           yarn build
           touch build/.nojekyll
           cp build/404.html build/index.html
-      
+
       - name: Deploy with gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn run deploy:pages -- -u "lmar13 <lmarnavig@gmail.com>" --cname lmarciniak.xyz
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          yarn run deploy:pages -- -u "github-actions-bot <support+actions@github.com>" --cname lmarciniak.xyz
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
