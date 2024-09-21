@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - gh-pages
+      - master
 permissions:
   contents: write
 jobs:
@@ -19,9 +19,11 @@ jobs:
           yarn build
           touch build/.nojekyll
           cp build/404.html build/index.html
+          yarn deploy:pages
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
           branch: gh-pages
+          cname: lmar13.github.io
