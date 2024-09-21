@@ -2,9 +2,9 @@
 	import { page } from '$app/stores';
 	import { theme, toggleTheme } from '$lib/stores/theme';
 	import { items } from '@data/navbar';
-	import * as HOME from '@data/home';
 
 	import { base } from '$app/paths';
+	import { _, locale } from 'svelte-i18n';
 	import UIcon from '../Icon/UIcon.svelte';
 
 	$: currentRoute = $page.url.pathname;
@@ -18,6 +18,14 @@
 			expanded = v;
 		}
 	};
+
+	const toggleLanguage = () => {
+		if ($locale === 'pl-PL') {
+			locale.set('en');
+		} else {
+			locale.set('pl-PL');
+		}
+	};
 </script>
 
 <div class="nav-menu">
@@ -29,12 +37,12 @@
 			<UIcon icon="i-carbon-code" classes="text-2em" />
 			<span
 				class="ml-2 text-md font-bold hidden md:inline overflow-hidden whitespace-nowrap text-ellipsis"
-				>{HOME.name} {HOME.lastName}
+				>{$_('name')} {$_('lastName')}
 			</span>
 		</a>
 		<div class="flex-1 block overflow-hidden md:hidden whitespace-nowrap text-ellipsis text-center">
-			{HOME.name}
-			{HOME.lastName}
+			{$_('name')}
+			{$_('lastName')}
 		</div>
 		<div class="flex-row flex-1 self-center h-full justify-center hidden md:flex">
 			{#each items as item (item.title)}
@@ -62,6 +70,16 @@
 						<UIcon icon="i-carbon-moon" />
 					{:else}
 						<UIcon icon="i-carbon-sun" />
+					{/if}
+				</button>
+				<button
+					class="bg-transparent text-1em border-none cursor-pointer hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
+					on:click={() => toggleLanguage()}
+				>
+					{#if $locale === 'pl-PL'}
+						<UIcon icon="i-carbon-polish" />
+					{:else}
+						<UIcon icon="i-carbon-english" />
 					{/if}
 				</button>
 			</div>
@@ -108,6 +126,18 @@
 				{:else}
 					<UIcon icon="i-carbon-sun" />
 					<span>Light Theme</span>
+				{/if}
+			</button>
+			<button
+				class="bg-transparent text-1em border-none cursor-pointer px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
+				on:click={() => toggleTheme()}
+			>
+				{#if $locale === 'pl-PL'}
+					<UIcon icon="i-carbon-polish" />
+					<span>PL</span>
+				{:else}
+					<UIcon icon="i-carbon-english" />
+					<span>EN</span>
 				{/if}
 			</button>
 		</div>
