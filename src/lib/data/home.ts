@@ -26,7 +26,7 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	},
 	{
 		platform: Platform.Email,
-		link: 'riadh_adrani@hotmail.fr'
+		link: 'lukasz.marciniak@wp.eu'
 	},
 	{
 		platform: Platform.Youtube,
