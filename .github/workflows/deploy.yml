@@ -19,7 +19,10 @@ jobs:
           yarn build
           touch build/.nojekyll
           cp build/404.html build/index.html
-          yarn deploy:pages
+      
+      - name: Deploy with gh-pages
+        run: |
+          yarn run deploy -- -u "github-actions-bot <support+actions@github.com>" --cname lmarciniak.xyz
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
