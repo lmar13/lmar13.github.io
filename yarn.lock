@@ -328,6 +328,20 @@
   dependencies:
     "@iconify/types" "*"
 
+"@iconify-json/emojione-monotone@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@iconify-json/emojione-monotone/-/emojione-monotone-1.2.0.tgz#eeb3ebd97f139e0422d5976491e7a91063fc45c2"
+  integrity sha512-qmJA0EkAHJbbx4c3rXMT/+sgr02Bkqqlv6FW3uSio8FHemIrpa/r0vT1v2pxpUwu5qhioZbrHnj51F8Dan0+3Q==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/emojione@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@iconify-json/emojione/-/emojione-1.2.0.tgz#e9eb1b584ad0e0767e7c421588b775c871c88d55"
+  integrity sha512-vdMusNPksreNnty66Ak/82tOoVGMFBO/89937otubz9fOjKNG1L/fDAr4r2F4OLZ69lVf03vZtoXLMprxZsX8w==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"

@@ -77,9 +77,11 @@
 					on:click={() => toggleLanguage()}
 				>
 					{#if $locale === 'pl-PL'}
-						<UIcon icon="i-carbon-polish" />
+						<UIcon icon="i-emojione-flag-for-united-kingdom" />
+						<!-- <UIcon icon="i-emojione-monotone-flag-for-united-kingdom" /> -->
 					{:else}
-						<UIcon icon="i-carbon-english" />
+						<UIcon icon="i-emojione-flag-for-poland" />
+						<!-- <UIcon icon="i-emojione-monotone-flag-for-poland" /> -->
 					{/if}
 				</button>
 			</div>
@@ -133,10 +135,10 @@
 				on:click={() => toggleTheme()}
 			>
 				{#if $locale === 'pl-PL'}
-					<UIcon icon="i-carbon-polish" />
+					<UIcon icon="i-emojione-flag-for-poland" />
 					<span>PL</span>
 				{:else}
-					<UIcon icon="i-carbon-english" />
+					<UIcon icon="i-emojione-flag-for-united-kingdom" />
 					<span>EN</span>
 				{/if}
 			</button>
