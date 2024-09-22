@@ -122,12 +122,12 @@
 				class="bg-transparent text-1em border-none cursor-pointer px-6 py-3 gap-2 row hover:bg-[color:var(--main-hover)] text-[var(--secondary-text)] px-2"
 				on:click={() => toggleTheme()}
 			>
-				{#if $locale === 'pl-PL'}
-					<UIcon icon="i-emojione-flag-for-united-kingdom" />
-					<!-- <UIcon icon="i-emojione-monotone-flag-for-united-kingdom" /> -->
+				{#if $theme}
+					<UIcon icon="i-carbon-moon" />
+					<span>Dark Theme</span>
 				{:else}
-					<UIcon icon="i-emojione-flag-for-poland" />
-					<!-- <UIcon icon="i-emojione-monotone-flag-for-poland" /> -->
+					<UIcon icon="i-carbon-sun" />
+					<span>Light Theme</span>
 				{/if}
 			</button>
 			<button
@@ -135,11 +135,11 @@
 				on:click={() => toggleLanguage()}
 			>
 				{#if $locale === 'pl-PL'}
-					<UIcon icon="i-emojione-flag-for-poland" />
-					<span>PL</span>
-				{:else}
 					<UIcon icon="i-emojione-flag-for-united-kingdom" />
 					<span>EN</span>
+				{:else}
+					<UIcon icon="i-emojione-flag-for-poland" />
+					<span>PL</span>
 				{/if}
 			</button>
 		</div>
